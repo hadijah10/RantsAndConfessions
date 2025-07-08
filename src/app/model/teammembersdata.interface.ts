@@ -11,6 +11,8 @@ export interface ITeamMember{
   bio: string;
   profile_image: string;
   social_media_links: ISocialMediaLink[];
+  'created-at': string; // ISO date string
+  'updated-at': string;
 }
 
 export interface IMeta {
@@ -25,3 +27,41 @@ export interface ITeamMembersApiResponse {
   meta: IMeta;
 }
 
+//interface for creating a team member.
+export interface ISocialMediaLink {
+  platform: string;
+  url: string;
+}
+
+export interface ICreateTeamMemberPayload {
+  name: string;
+  role: string;
+  bio: string;
+  profile_image: string;
+  social_media_links: ISocialMediaLink[];
+}
+
+export interface ITeamMemberCreateApiResponse {
+  status: string; // e.g., "success"
+  data: ICreateTeamMemberPayload;
+}
+
+export interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  bio: string;
+  profile_image: string;
+  social_media_links: ISocialMediaLink[];
+}
+
+export interface ITeamMemberUpdtaeApiResponse{
+    status: string,
+    message: string,
+    data: TeamMember
+}
+
+export interface ITeamMemberDeleteApiResponse{
+    status: string,
+    message:string
+}
