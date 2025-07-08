@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICreateTeamMemberPayload, ITeamMember, ITeamMemberCreateApiResponse,ITeamMemberDeleteApiResponse,ITeamMemberUpdtaeApiResponse } from '../../model/teammembersdata.interface';
+import { ICreateTeamMemberPayload, ITeamMember, ITeamMemberCreateApiResponse,ITeamMemberDeleteApiResponse,ITeamMemberUpdateApiResponse } from '../../model/teammembersdata.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class TeamMembersService {
 
   //authentication is required
   updateTeamMember(id:number,data:ICreateTeamMemberPayload){
-    return this.http.put<ITeamMemberUpdtaeApiResponse>(`${this.url}/team-members/${id}`,data).pipe()
+    return this.http.put<ITeamMemberUpdateApiResponse>(`${this.url}/team-members/${id}`,data).pipe()
   }
 
   //authentication is required

@@ -28,12 +28,21 @@ export interface ITeamMembersApiResponse {
 }
 
 //interface for creating a team member.
-export interface ISocialMediaLink {
+export interface ISocialMediaLinkPost {
   platform: string;
   url: string;
 }
 
 export interface ICreateTeamMemberPayload {
+  name: string;
+  role: string;
+  bio: string;
+  profile_image: string;
+  social_media_links: ISocialMediaLinkPost[];
+}
+
+export interface TeamMember {
+  id: number;
   name: string;
   role: string;
   bio: string;
@@ -46,16 +55,7 @@ export interface ITeamMemberCreateApiResponse {
   data: ICreateTeamMemberPayload;
 }
 
-export interface TeamMember {
-  id: number;
-  name: string;
-  role: string;
-  bio: string;
-  profile_image: string;
-  social_media_links: ISocialMediaLink[];
-}
-
-export interface ITeamMemberUpdtaeApiResponse{
+export interface ITeamMemberUpdateApiResponse{
     status: string,
     message: string,
     data: TeamMember
