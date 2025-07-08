@@ -23,7 +23,7 @@ export interface PodcastMeta {
   last_page: number;
 }
 
-export interface PodcastApiResponse {
+export interface IPodcastApiResponse {
   status: string; // "success"
   data: PodcastEpisode[];
   meta: PodcastMeta;
