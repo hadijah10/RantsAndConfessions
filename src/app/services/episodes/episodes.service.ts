@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IPodcastApiResponse } from '../../model/episodedata.interface';
+import { IPodcastApiResponse,IPodcastEpisodesSearchApiResponse } from '../../model/episodedata.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +11,16 @@ export class EpisodesService {
   constructor(private http: HttpClient) { }
 
   getEpisodes(){
-    return this.http.get<IPodcastApiResponse>(this.url)
+    return this.http.get<IPodcastApiResponse>(this.url).pipe()
   }
 
   getSingleEpisode(){
     //to be done.
     // return this.http.get<>()
+  }
+
+  searchEpisodes(searchTerm: string){
+    return this.http.get<IPodcastEpisodesSearchApiResponse>(`${this.url}/search?search=${searchTerm}`).pipe()
   }
 
 }

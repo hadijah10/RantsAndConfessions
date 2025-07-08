@@ -28,3 +28,34 @@ export interface IPodcastApiResponse {
   data: PodcastEpisode[];
   meta: PodcastMeta;
 }
+
+//searchEpisodes interface
+export interface IPodcastSearchEpisode {
+  id: number;
+  title: string;
+  description: string;
+  img_url: string;
+  audio_url: string;
+  duration: string;         // format: "mm:ss" or "hh:mm:ss"
+  posted_on: string;        // format: YYYY-MM-DD
+  season: number;
+  episode: number;
+  anchor_podcast: string;
+  apple_podcasts: string;
+  google_podcasts: string;
+  archive: number;          // 0 or 1
+  featured: number;         // 0 or 1
+  slug: string;
+}
+
+export interface IMeta {
+  total: number;
+  page: number;
+  last_page: number;
+}
+
+export interface IPodcastEpisodesSearchApiResponse {
+  status: string; // e.g. "success"
+  data: IPodcastSearchEpisode[];
+  meta: IMeta;
+}
