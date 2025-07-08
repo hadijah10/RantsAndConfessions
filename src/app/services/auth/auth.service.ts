@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ILoginInterface, ILoginSuccess, ISignUpInterface, ISignUpSuccess, LogOutInterface } from '../model/authdata.interface';
+import { ILoginInterface, ILoginSuccess, ISignUpInterface, ISignUpSuccess, LogOutInterface } from '../../model/authdata.interface';
 import { catchError,retry } from 'rxjs';
 
 @Injectable({
