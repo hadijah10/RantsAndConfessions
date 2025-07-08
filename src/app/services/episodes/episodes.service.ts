@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EpisodesService {
-
+  private url=`https://api.rantsnconfess.com/v1/episodes`
   constructor() { }
+
+
 }
