@@ -38,6 +38,19 @@ export interface IPlaylistDeleteResponse{
   message: string
 }
 
+//interfacefor adding an episode to playlist
 export interface IEpisodeIdsPayload {
   episode_ids: number[];
+}
+
+export interface AddEpisodesResponseData {
+  playlist_id: number;
+  added_episode_ids: number[];
+}
+
+
+export interface IAddEpisodeToPlaylistApiResponse{
+  status: string; // e.g. "success"
+  message: string; // e.g. "Episodes added successfully."
+  data: AddEpisodesResponseData;
 }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IEpisodeIdsPayload, IPlaylistDeleteResponse, IPlaylistEditData, IPlaylistListApiResponse, IPostPlaylistApiResponse, IPostPlaylistData } from '../../model/playlistdata.interface';
+import { IEpisodeIdsPayload, IPlaylistDeleteResponse, IPlaylistEditData, IPlaylistListApiResponse, IPostPlaylistApiResponse, IPostPlaylistData,IAddEpisodeToPlaylistApiResponse } from '../../model/playlistdata.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,7 @@ export class PlaylistService {
 
   addEpisodesToPlaylist(id:number,data:IEpisodeIdsPayload){
     //function clears out existing episodes in playlist
-    return this.http.post<IEpisodeIdsPayload>(`${this.url}/${id}/episodes`,data)
+    return this.http.post<IAddEpisodeToPlaylistApiResponse>(`${this.url}/${id}/episodes`,data)
   }
 }
+
