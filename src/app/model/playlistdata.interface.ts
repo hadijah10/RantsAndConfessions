@@ -37,3 +37,7 @@ export interface IPlaylistDeleteResponse{
   status: string,
   message: string
 }
+
+export interface IEpisodeIdsPayload {
+  episode_ids: number[];
+}
