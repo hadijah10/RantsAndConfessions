@@ -4,6 +4,10 @@ import { ClientComponent } from './layouts/client/client.component';
 import { HomepageComponent } from './pages/client/homepage/homepage.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { adminAuthGuardGuard } from './guards/admin-auth-guard.guard';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { PlaylistComponent } from './pages/admin/playlist/playlist.component';
+import { EpisodeComponent } from './pages/admin/episode/episode.component';
+import { ConfessionsComponent } from './pages/admin/confessions/confessions.component';
 
 export const routes: Routes = [
     {
@@ -45,7 +49,23 @@ export const routes: Routes = [
         loadComponent: () => import('./layouts/admin/admin.component').then(c => c.AdminComponent),
         canActivate: [adminAuthGuardGuard],
         children: [
-
+                {
+                    path:"",
+                    component:DashboardComponent,
+                    pathMatch:"full"
+                },
+                {
+                    path:"playlist",
+                    component:PlaylistComponent,
+                },
+                {
+                    path:"episodes",
+                    component:EpisodeComponent,
+                },
+                {
+                    path:"confession",
+                    component:ConfessionsComponent,
+                },
         ]
 
     },
