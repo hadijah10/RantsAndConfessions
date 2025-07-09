@@ -3,6 +3,7 @@
 
 @use 'reset' as *;
 @use 'custom' as *;
+@use 'fonts' as *;
 
 *{
     margin: 0;
@@ -11,6 +12,7 @@
 }
 body{
     margin: 0;
+    font-family: "Montserrat", sans-serif;
     min-height: 100dvh;
     background-color: var(--background-color);
      color: var(--text-color);
