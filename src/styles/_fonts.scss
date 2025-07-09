@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@mixin TextXB{
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+
+@mixin TextSB{
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+@mixin TextRegular{
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin TextLight{
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@mixin TextB{
+    font-family: "Nunito Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}

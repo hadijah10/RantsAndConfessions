@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+:root{
+    --background-color: #{$light-bg};
+    --header-color: #{$light-header-bg};
+    --text-color: #{$light-text-color};
+    --search-color: #{$light-search-color};
+}
+.dark-theme{
+     --background-color: #{$dark-bg};
+    --header-color: #{$dark-header-bg};
+    --text-color: #{$dark-text-color};
+    --search-color: #{$dark-search-color};
+
+}
+
