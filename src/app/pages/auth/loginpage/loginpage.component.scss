@@ -1,0 +1,89 @@
+@use 'responsive' as *;
+
+.loggin-wrapper {
+    display: flex;
+    height: 100Vh;
+    width: 100vw;
+
+    .left {
+        flex: 1;
+        background-image: url(https://plus.unsplash.com/premium_photo-1683140721527-262985d7c8ef?q=80&w=977&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-position: center;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.221);
+        background-blend-mode: darken;
+
+        @include respond-to(mobile) {
+            display: none;
+        }
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+
+    .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .form-wrapper {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 2rem;
+            justify-content: center;
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                gap: .8rem;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+
+                    .error{
+                        color: red;
+                    }
+
+                    input {
+                        padding: 1rem;
+                        border-radius: 0.5rem;
+                        border-radius: 1px solid rgba(212, 212, 212, 0.768);
+                        border: none;
+                        background-color: rgba(242, 242, 242, 0.772);
+                    }
+                }
+            }
+
+            .field {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .acctions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+
+                button {
+                    width: 100%;
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    border: none
+                }
+            }
+        }
+
+    }
+}
