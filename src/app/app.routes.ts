@@ -3,6 +3,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ClientComponent } from './layouts/client/client.component';
 import { HomepageComponent } from './pages/client/homepage/homepage.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { adminAuthGuardGuard } from './guards/admin-auth-guard.guard';
 
 export const routes: Routes = [
     {
@@ -42,6 +43,7 @@ export const routes: Routes = [
     {
         path: "admin",
         loadComponent: () => import('./layouts/admin/admin.component').then(c => c.AdminComponent),
+        canActivate: [adminAuthGuardGuard],
         children: [
 
         ]

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IGetConfessionData, IPostConfessionData, IPostConfessionDataResponse } from '../../model/confessiondata.interface';
+import { IGetConfessionData, IPostConfessionData, IPostConfessionDataResponse } from '../../../model/confessiondata.interface';
 
 @Injectable({
   providedIn: 'root'

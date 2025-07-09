@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICreateTeamMemberPayload, ITeamMember, ITeamMemberCreateApiResponse,ITeamMemberDeleteApiResponse,ITeamMemberUpdateApiResponse } from '../../model/teammembersdata.interface';
+import { ICreateTeamMemberPayload, ITeamMember, ITeamMemberCreateApiResponse,ITeamMemberDeleteApiResponse,ITeamMemberUpdateApiResponse } from '../../../model/teammembersdata.interface';
 
 @Injectable({
   providedIn: 'root'
