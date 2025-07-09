@@ -1,0 +1,63 @@
+@use 'mixins' as *;
+@use 'fonts' as *;
+
+.main{
+    background-color: #95cbe2;
+    padding-inline: 5rem;
+    @media(max-width:768px){
+        padding-inline: 1rem;
+    }
+    .head{
+        @include flex($justify:space-between,$align:center);
+        @media(max-width:768px){
+            @include flex($direction:column);
+            padding-block: 1.5rem;
+        }
+        .start{
+            padding-inline: 1rem;
+            padding-block: 0.7rem;
+            background-color: black;
+            margin-top: 1rem;
+            @include TextSB;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            border: none;
+            border-radius: 1.5rem;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+                background-color: #17141D;
+            }
+        }
+    }
+    .headtext{
+        flex:0.5;
+        color: black;
+        @include flex($direction:column,$justify:center,$gap:1rem);
+        h2{
+            @include TextXB;
+            font-size: 2.5rem;
+            @media (max-width:768px) {
+                font-size: 1.5rem;
+            }
+        }
+        p{
+            font-size: 1rem;
+            line-height: 1.5rem;
+            @media(max-width: 768px){
+                font-size: 0.6rem;
+                line-height: 1rem;
+            }
+        }
+    }
+    .host{
+        flex:0.5;
+        height: 30rem;
+        @include flex($align:center);
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
