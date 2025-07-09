@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IEpisodeIdsPayload, IPlaylistDeleteResponse, IPlaylistEditData, IPlaylistListApiResponse, IPostPlaylistApiResponse, IPostPlaylistData,IAddEpisodeToPlaylistApiResponse } from '../../model/playlistdata.interface';
+import { IEpisodeIdsPayload, IPlaylistDeleteResponse, IPlaylistEditData, IPlaylistListApiResponse, IPostPlaylistApiResponse, IPostPlaylistData,IAddEpisodeToPlaylistApiResponse } from '../../../model/playlistdata.interface';
 
 @Injectable({
   providedIn: 'root'

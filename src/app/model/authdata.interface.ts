@@ -1,4 +1,4 @@
-export interface ISignUpInterface{
+export interface ISignUpInterface {
   name: string,
   email: string,
   password: string,
@@ -6,7 +6,7 @@ export interface ISignUpInterface{
   role: string
 }
 
-export interface ISignUpSuccess{
+export interface ISignUpSuccess {
   status: string,
   message: string,
   data: {
@@ -22,28 +22,30 @@ export interface ISignUpSuccess{
   }
 }
 
-export interface ILoginInterface{
+export interface ILoginInterface {
   email: string,
   password: string
 }
 
-export interface ILoginSuccess{
-  status: string,
-  message: string,
-  data: {
-    user: {
-      id: 13,
-      name: string,
-      email: string,
-      email_verified_at: null,
-      created_at: string,
-      updated_at: string,
-      role: string
-    },
-    token: string
-  }
+export interface IAuthState {
+  user: {
+    id: number,
+    name: string,
+    email: string,
+    email_verified_at: null,
+    created_at: string,
+    updated_at: string,
+    role: string
+  },
+  token: string
 }
 
-export interface LogOutInterface{
+export interface ILoginSuccess {
+  status: string,
+  message: string,
+  data: IAuthState
+}
+
+export interface LogOutInterface {
   message: string
 }
