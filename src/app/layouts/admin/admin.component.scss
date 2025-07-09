@@ -1,0 +1,92 @@
+.layout-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    .sidebar {
+        width: 20rem;
+        background-color: aliceblue;
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .avatar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            .avatar {
+                height: 7rem;
+                width: 7rem;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: auto;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .info-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+
+                p {
+                    font-weight: bold;
+                }
+
+                button {
+                    border: none;
+                    padding: 0.5rem 1rem;
+                }
+            }
+
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            align-items: center;
+            flex:1;
+            margin: auto;
+            gap: 1rem;
+
+            .nav-link {
+                text-decoration: none;
+                color: black;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem 0.5rem;
+                cursor: pointer;
+                // border: 1px solid rgb(224, 224, 224);
+                border-radius: 0.5rem;
+                p{
+                    flex:1;
+                }
+                svg {
+                    height: 1.5rem;
+                }
+
+            }
+
+            
+        }
+
+    }
+}

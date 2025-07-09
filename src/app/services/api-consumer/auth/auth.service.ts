@@ -33,8 +33,8 @@ export class AuthService {
     )
   }
 
-  logOut() {
-    this.http.get<LogOutInterface>(`${this.url}logout`).pipe(
+  logOut():Observable<LogOutInterface> {
+    return this.http.get<LogOutInterface>(`${this.url}logout`).pipe(
        catchError(error=>{
         this.errorService.handleError(error);
         return of(error);

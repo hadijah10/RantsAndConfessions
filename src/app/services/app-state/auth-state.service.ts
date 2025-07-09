@@ -24,7 +24,10 @@ export class AuthStateService {
     );
   }
 
-  
+  // storeToken(token: string) {
+  //   sessionStorage.setItem('auth-token', token)
+  // }
+
 
   persitAuthLocal(value: IAuthState) {
     localStorage.setItem(`auth`, JSON.stringify(value))
@@ -36,8 +39,19 @@ export class AuthStateService {
     this.authState = JSON.parse(authString)
   }
 
-  logout() {
-    this.authConsumer.logOut()
+  logout(): Observable<boolean> {
+    return this.authConsumer.logOut().pipe(
+      tap(resp => {
+        if (resp.message) {
+          this.authState = null;
+          localStorage.clear();
+        } else {
+          throw new Error('Logout failed:Token is missing or invalid');
+        }
+      }),
+      map(() => true),
+      catchError(() => of(false))
+    );
   }
 
 }
