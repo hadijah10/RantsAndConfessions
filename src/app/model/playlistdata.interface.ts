@@ -4,18 +4,35 @@ export interface IPlaylist {
   description: string;
   created_at: string; // ISO 8601 date string
   updated_at: string;
+  episodes:number[]
 }
 
-export interface IMeta {
-  total: number;
-  page: number;
-  last_page: number;
+export interface PaginationLink {
+  url: string | null;
+  label: string;
+  active: boolean;
 }
+
+export interface IPlaylistResponseData {
+  current_page: number;
+  data: IPlaylist[];
+  first_page_url: string;
+  from: number;
+  last_page: number;
+  last_page_url: string;
+  links: PaginationLink[];
+  next_page_url: string | null;
+  path: string;
+  per_page: number;
+  prev_page_url: string | null;
+  to: number;
+  total: number;
+}
+
 
 export interface IPlaylistListApiResponse {
   status: string; // "success"
-  data: IPlaylist[];
-  meta: IMeta;
+  data: IPlaylistResponseData 
 }
 
 export interface IPostPlaylistData{
