@@ -1,1 +1,28 @@
-<p>navbar works!</p>
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-brand">🎙️ PodStream</div>
+
+  <button
+    class="hamburger"
+    aria-label="Toggle menu"
+    aria-controls="mobile-menu"
+    [attr.aria-expanded]="isMenuOpen"
+    (click)="toggleMenu()">
+    ☰
+  </button>
+
+  <ul class="nav-links">
+    <li><a routerLink="/" routerLinkActive="active" tabindex="0">Home</a></li>
+    <li><a routerLink="/episodes" routerLinkActive="active" tabindex="0">Episodes</a></li>
+    <li><a routerLink="/about" routerLinkActive="active" tabindex="0">About</a></li>
+  </ul>
+</nav>
+
+<ul
+  id="mobile-menu"
+  class="mobile-menu"
+  [class.open]="isMenuOpen"
+  [attr.aria-hidden]="!isMenuOpen">
+  <li><a routerLink="/" routerLinkActive="active" tabindex="0">Home</a></li>
+  <li><a routerLink="/episodes" routerLinkActive="active" tabindex="0">Episodes</a></li>
+  <li><a routerLink="/about" routerLinkActive="active" tabindex="0">About</a></li>
+</ul>
