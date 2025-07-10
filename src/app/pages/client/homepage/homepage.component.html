@@ -30,7 +30,6 @@
         </p>
     </div>
     <section class="cardcont">
-        
         @if(featplaylist$ | async; as playlist){
             @for (data of playlist.data.data;track $index){
             @if($index <= 2){
@@ -61,8 +60,8 @@
             }
         }
     </section>
-    <section class="episodescont">
-        <h2>Discover Our Latest Episodes</h2>
+    <section class="episodescontainer">
+        <h3>Discover Our Latest Episodes</h3>
     </section>
 </section>
 </section>
