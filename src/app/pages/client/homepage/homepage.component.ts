@@ -3,17 +3,23 @@ import { PlaylistService } from '../../../services/api-consumer/playlist/playlis
 import { IPlaylistListApiResponse } from '../../../model/playlistdata.interface';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { EpisodesService } from '../../../services/api-consumer/episodes/episodes.service';
+import { IPodcastApiResponse } from '../../../model/episodedata.interface';
+import { EpisodecardComponent } from '../../../components/episodecard/episodecard.component';
 
 @Component({
   selector: 'app-homepage',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe,EpisodecardComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent {
   featplaylist$!:Observable<IPlaylistListApiResponse>
-  constructor(private playlist:PlaylistService ){
-    this.featplaylist$ = this.playlist.getPlaylist(1)
+  episodesdata$!:Observable<IPodcastApiResponse>
+
+  constructor(private playlist:PlaylistService,private episodes:EpisodesService){
+    this.featplaylist$ = this.playlist.getPlaylist()
+    this.episodesdata$ =  this.episodes.getEpisodes()
   }
 
 
