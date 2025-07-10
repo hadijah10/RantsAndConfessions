@@ -2,7 +2,13 @@
 @use 'fonts' as *;
 @use 'variables' as *;
 
-
+h3{
+        font-size: 2rem;
+        color:var(--body-text-color);
+        @media(max-width:768px){
+        font-size: 1rem;
+        }
+    }
 .main{
     background-color: #B6C6CD;
     padding-inline: 5rem;
@@ -78,13 +84,7 @@
             padding-inline: 1rem;
         }
     }
-    h3{
-        font-size: 2rem;
-        color:var(--body-text-color);
-        @media(max-width:768px){
-        font-size: 1rem;
-        }
-    }
+    
     p{
          font-size: 1rem;
           color:var(--body-text-color);
