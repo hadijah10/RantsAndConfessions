@@ -2,6 +2,9 @@
 @use 'fonts' as *;
 @use 'variables' as *;
 
+a{
+    text-decoration: none;
+}
 h3{
         font-size: 2rem;
         color:var(--body-text-color);
@@ -157,10 +160,13 @@ h3{
     }
 }
 .episodescontainer{
-    @include flex($direction:column,$justify:center,$align:center,$gap:0.5rem);
+    @include flex($direction:column,$justify:center,$align:center,$gap:2.5rem);
     padding-block: 2.5rem;
     .homeepisodetitle{
         font-size: 1.2rem;
+    }
+    .texthead{
+        @include flex($direction:column,$gap:1.2rem)
     }
 }
 .episodecards {
@@ -168,4 +174,8 @@ h3{
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center; /* Center align */
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  }
 }

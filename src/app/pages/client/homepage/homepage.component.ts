@@ -6,10 +6,12 @@ import { AsyncPipe } from '@angular/common';
 import { EpisodesService } from '../../../services/api-consumer/episodes/episodes.service';
 import { IPodcastApiResponse } from '../../../model/episodedata.interface';
 import { EpisodecardComponent } from '../../../components/episodecard/episodecard.component';
+import { RouterLink } from '@angular/router';
+import { ButtonComponent } from '../../../components/button/button.component';
 
 @Component({
   selector: 'app-homepage',
-  imports: [AsyncPipe,EpisodecardComponent],
+  imports: [AsyncPipe,EpisodecardComponent,RouterLink,ButtonComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })

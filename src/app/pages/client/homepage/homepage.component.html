@@ -61,17 +61,22 @@
         }
     </section>
     <section class="episodescontainer">
-        <h3>Discover Our Latest Episodes</h3>
-        <p>Tune in for fresh voices, new stories, and unmissable conversations.</p>
+        <div class="texthead">
+            <h3>Discover Our Latest Episodes</h3>
+            <p>Tune in for fresh voices, new stories, and unmissable conversations.</p>
+        </div>
         <section class="episodecards">
            @if(episodesdata$ | async;as epidata){
                 @for(epidata of epidata.data;track $index){
                     @if($index <6){
-                        <app-episodecard [epidata]="epidata"></app-episodecard>
+                        <a [routerLink] ='["/app",epidata.id]'>
+                            <app-episodecard [epidata]="epidata"></app-episodecard>
+                        </a>
                     }
                 }
            }
         </section>
+        <app-button text="See More" link="/episodes"></app-button>
     </section>
 </section>
 </section>

@@ -1,9 +1,19 @@
 @use 'variables' as *;
-a{
-    text-decoration: none;
-}
+
 button{
     padding-inline: 1rem;
     padding-block: 0.4rem;
+    font-size: 1rem;
     background-color: $header-bg;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: var(--active-link-bg);
+    cursor: pointer;
+    &:hover{
+        scale: 1.1;
+    }
+    a{
+    text-decoration: none;
+}
 }
