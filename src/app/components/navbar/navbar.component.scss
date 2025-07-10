@@ -1,0 +1,113 @@
+@use 'variables' as *;
+@use 'custom' as *;
+@use 'mixins' as *;
+
+.navbar {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0px 0px 2px 4px $shardow-color;
+  background-color: var(--header-color);
+}
+
+.navbar-brand {
+  font-size: 1rem;
+  font-weight: bold;
+}
+svg{
+    width:2rem;
+    height: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+.end{
+    @include flex($justify:space-between,$align:center)
+}
+
+.nav-links a {
+//  ;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0.7rem;
+  .active{
+ color: var(--header-text-color);
+ font-weight: 500;
+  }
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    cursor: pointer;
+ border-bottom: 1px solid $accent;
+}
+.active{
+    font-weight: 700;
+    color: white;
+}
+
+
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--background-color);
+  padding: 1rem 1.5rem;
+  list-style: none;
+}
+
+.mobile-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+.login{
+    padding:0.5rem 0.7rem;
+    border: none;
+    background-color: $accent;
+    font-size:  1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: $light-text-color;
+    }
+    a{
+        text-decoration: none;
+    color: white;
+    }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  .login{
+    display: none;
+  }
+
+}

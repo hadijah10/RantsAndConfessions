@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@mixin TextXB{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+
+@mixin TextSB{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+@mixin TextRegular{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin TextLight{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@mixin TextB{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}

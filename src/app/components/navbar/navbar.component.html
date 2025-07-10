@@ -1,0 +1,53 @@
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-brand">🎙️ PodStream</div>
+
+  @if(!isMenuOpen){
+    <button
+    class="hamburger"
+    aria-label="Toggle menu"
+    aria-controls="mobile-menu"
+    [attr.aria-expanded]="isMenuOpen"
+    (click)="toggleMenu()">
+   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
+  }
+  @else {
+    <button
+    class="hamburger"
+    aria-label="Toggle menu"
+    aria-controls="mobile-menu"
+    [attr.aria-expanded]="isMenuOpen"
+    (click)="toggleMenu()">
+   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </svg>
+  </button>
+  }
+
+
+      <ul class="nav-links">
+    <li><a routerLink="/" routerLinkActive="active" tabindex="0">Home</a></li>
+    <li><a routerLink="/episodes" routerLinkActive="active" tabindex="0">Episodes</a></li>
+    <li><a routerLink="/playlist" routerLinkActive="active" tabindex="0">Playlist</a></li>
+    <li><a routerLink="/confessions" routerLinkActive="active" tabindex="0">Confessions</a></li>
+  </ul>
+
+  <button class="login">
+    <a routerLink="/admin/login" routerLinkActive="active" tabindex="0">Login</a></button>
+</nav>
+
+<ul
+  id="mobile-menu"
+  class="mobile-menu"
+  [class.open]="isMenuOpen"
+  [attr.aria-hidden]="!isMenuOpen"
+  (click)="toggleMenu()">
+  
+  <li><a routerLink="/" routerLinkActive="active" tabindex="0">Home</a></li>
+  <li><a routerLink="/episodes" routerLinkActive="active" tabindex="0">Episodes</a></li>
+    <li><a routerLink="/playlist" routerLinkActive="active" tabindex="0">Playlist</a></li>
+    <li><a routerLink="/confessions" routerLinkActive="active" tabindex="0">Confessions</a></li>
+    <li> <a routerLink="/admin/login" routerLinkActive="active" tabindex="0">Login</a></li>
+</ul>
