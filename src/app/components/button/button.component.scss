@@ -1,0 +1,9 @@
+@use 'variables' as *;
+a{
+    text-decoration: none;
+}
+button{
+    padding-inline: 1rem;
+    padding-block: 0.4rem;
+    background-color: $header-bg;
+}
