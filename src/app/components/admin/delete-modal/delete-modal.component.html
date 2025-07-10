@@ -1,0 +1,16 @@
+   <div class="delete-modal">
+        <div class="content">
+            <div class="title">
+                <h3>Confirm Delete</h3>
+                <p>Are you sure you want to delete the playlist with title <strong>"{{playlist?.name}}"</strong></p>
+            </div>
+            <div class="actions" (click)="cancelPressed()">
+                <button class="cancel">
+                    Cancel
+                </button>
+                <button class="confirm" (click)="continuePressed()">
+                    Confirm
+                </button>
+            </div>
+        </div>
+    </div>

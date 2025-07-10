@@ -12,8 +12,8 @@ import { AsyncPipe } from '@angular/common';
 })
 export class HomepageComponent {
   featplaylist$!:Observable<IPlaylistListApiResponse>
-  constructor(private playlist:PlaylistService){
-    this.featplaylist$ = this.playlist.getPlaylist()
+  constructor(private playlist:PlaylistService ){
+    this.featplaylist$ = this.playlist.getPlaylist(1)
   }
 
 

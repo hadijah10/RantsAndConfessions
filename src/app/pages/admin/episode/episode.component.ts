@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IAddEpisodeToPlaylistApiResponse, IEpisode } from '../../../model/playlistdata.interface';
 
 @Component({
   selector: 'app-episode',
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './episode.component.scss'
 })
 export class EpisodeComponent {
+  episodes: IEpisode[] = []
+
+  constructor() { }
+
+  toggleCreate() {
+
+  }
 
 }

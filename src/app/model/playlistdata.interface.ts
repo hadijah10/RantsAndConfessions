@@ -4,7 +4,7 @@ export interface IPlaylist {
   description: string;
   created_at: string; // ISO 8601 date string
   updated_at: string;
-  episodes:number[]
+  episodes: number[]
 }
 
 export interface PaginationLink {
@@ -32,25 +32,25 @@ export interface IPlaylistResponseData {
 
 export interface IPlaylistListApiResponse {
   status: string; // "success"
-  data: IPlaylistResponseData 
+  data: IPlaylistResponseData
 }
 
-export interface IPostPlaylistData{
+export interface IPostPlaylistData {
   name: string,
   description: string
 }
 
-export interface IPostPlaylistApiResponse{
+export interface IPostPlaylistApiResponse {
   status: string; // e.g. "success"
   data: IPlaylist;
 }
 
-export interface IPlaylistEditData{
+export interface IPlaylistEditData {
   name: string,
   description: string
 }
 
-export interface IPlaylistDeleteResponse{
+export interface IPlaylistDeleteResponse {
   status: string,
   message: string
 }
@@ -66,8 +66,38 @@ export interface AddEpisodesResponseData {
 }
 
 
-export interface IAddEpisodeToPlaylistApiResponse{
+export interface IAddEpisodeToPlaylistApiResponse {
   status: string; // e.g. "success"
   message: string; // e.g. "Episodes added successfully."
   data: AddEpisodesResponseData;
+}
+
+
+export interface IEpisode {
+  id: number;
+  title: string;
+  description: string;
+  img_url: string;
+  audio_url: string;
+  duration: string;
+  posted_on: string;
+  season: string;
+  episode: string;
+  spotify_url: string;
+  apple_podcasts_url: string;
+  archive: string;
+  featured: string;
+  slug: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface IEpisodeResponse {
+  status: string,
+  data: IEpisode,
+  meta: {
+    total: number,
+    page: number,
+    last_page: number
+  }
 }

@@ -1,0 +1,41 @@
+<div class="create-modal">
+    <div class="content">
+        <div class="title">
+            <h3>Create Playlist</h3>
+            <p>lets create a new playlist that shapes future episodes</p>
+        </div>
+        <form [formGroup]="playlistForm" (ngSubmit)="submit()">
+            <div class="field">
+                <label for="name">Playlist name</label>
+                <input placeholder="Enter playlist name" type="text" id="name" formControlName="name" />
+                @if (playlistForm.get('name')?.touched && playlistForm.get('name')?.invalid) {
+                <p class="error">
+                    Playlist name is required
+                </p>
+                }
+            </div>
+
+            <div class="field">
+                <label for="description">Description</label>
+                <textarea placeholder="Describe playlist here ..." id="description"
+                    formControlName="description"></textarea>
+                @if (playlistForm.get('description')?.touched && playlistForm.get('description')?.invalid) {
+                <p class="error">
+                    Playlist description is required
+                </p>
+                }
+            </div>
+
+        </form>
+
+        <div class="actions">
+            <button class="cancel" (click)="cancelPressed()">
+                Cancel
+            </button>
+            <button class="confirm" (click)="continuePressed()">
+                Confirm
+            </button>
+        </div>
+
+    </div>
+</div>
