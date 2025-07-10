@@ -35,7 +35,13 @@
   </ul>
 
   <button class="login">
-    <a routerLink="/admin/login" routerLinkActive="active" tabindex="0">Login</a></button>
+    @if (authStateService.authState) {
+      <a routerLink="/admin" routerLinkActive="active" tabindex="0">Account</a>
+    }@else {
+      <a routerLink="/auth/login" routerLinkActive="active" tabindex="0">Login</a>
+    }
+  </button>
+
 </nav>
 
 <ul

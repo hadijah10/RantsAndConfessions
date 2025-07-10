@@ -1,9 +1,21 @@
+.conatiner {
+    position: relative;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: rgb(59, 59, 59);
+}
+
 .playlist-wrapper {
     display: flex;
     flex-direction: column;
     flex: 1;
     padding: 2rem 1rem;
     gap: 2rem;
+
+    overflow-y: auto;
+
 
     .header {
         display: flex;
@@ -51,6 +63,7 @@
     }
 
     .playlist-table {
+
         .row {
             display: flex;
             flex-direction: row;
@@ -75,6 +88,9 @@
 
             .title {
                 flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
             }
 
             .created {
@@ -97,6 +113,15 @@
                         height: 1rem;
                     }
                 }
+
+                .trash {
+                    background-color: rgba(255, 138, 138, 0.225);
+                    color: rgb(72, 0, 0);
+                }
+
+                .edit {
+                    background-color: rgb(203, 203, 203);
+                }
             }
         }
 
@@ -104,4 +129,7 @@
             border-bottom: none;
         }
     }
+
+
+
 }
