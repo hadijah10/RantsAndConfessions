@@ -72,7 +72,7 @@
            @if(episodesdata$ | async;as epidata){
                 @for(epidata of epidata.data;track $index){
                     @if($index <6){
-                        <a [routerLink] ='["/episodes",epidata.id]'>
+                        <a [routerLink] ='["/app/episodes",epidata.id]'>
                             <app-episodecard [epidata]="epidata"></app-episodecard>
                         </a>
                     }

@@ -1,0 +1,16 @@
+a{
+    text-decoration: none;
+}
+.cardcontainer{
+     display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center align */
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  } 
+  max-width: 72rem;
+  margin:auto;
+  padding-block: 2rem;
+}
