@@ -9,7 +9,7 @@
         }
         @else {
                  @for(episode of paginatedEpisodes;track $index){
-                <a [routerLink] ='["/episodes",episode.id]'>
+                <a [routerLink] ='["/app/episodes",episode.id]'>
                     <app-episodecard [epidata]="episode"></app-episodecard>
                 </a>
         }
