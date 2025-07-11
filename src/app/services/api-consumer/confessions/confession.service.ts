@@ -21,8 +21,16 @@ export class ConfessionService {
     )
   }
 
-  postConfessions(data: IPostConfessionData) {
-    return this.http.post<IPostConfessionDataResponse>(this.url, data).pipe()
+
+  postConfessions(data: IPostConfessionData){
+    return this.http.post<IPostConfessionDataResponse>(this.url,data).pipe(
+      retry(2),
+    catchError(error =>{
+       this.errorservice.handleError(error)
+      return of(error);
+    })
+    )
+
   }
 
 

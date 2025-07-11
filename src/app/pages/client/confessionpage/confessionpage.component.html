@@ -1,0 +1,56 @@
+<form [formGroup]="confessionsForm" (ngSubmit)="onSubmit()" aria-labelledby="formTitle">
+  <h2 id="formTitle">Confession</h2>
+  <div>
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      formControlName="message"
+      rows="4"
+      aria-required="true"
+      required
+    ></textarea>
+          <div class="alert" *ngIf="confessionsForm.get('message')?.invalid && (confessionsForm.get('message')?.dirty || confessionsForm.get('message')?.touched)">
+            <div *ngIf="confessionsForm.get('message')?.hasError('required')">
+              Message is required.
+            </div>
+            <div *ngIf="confessionsForm.get('message')?.hasError('minlength')">
+              Message must be at least 4 characters long.
+            </div>
+          </div>
+  </div>
+  <div>
+    <label for="category">Category</label>
+    <select id="category" formControlName="category" aria-required="true" required>
+      <option value="" disabled>Select a category</option>
+      @for(cat of categories;track $index){
+        <option [value]="cat">{{ cat }}</option>
+      }
+    </select>
+    <div class="alert" *ngIf="confessionsForm.get('category')?.invalid && (confessionsForm.get('category')?.dirty || confessionsForm.get('category')?.touched)">
+            <div *ngIf="confessionsForm.get('category')?.hasError('required')">
+              Category is required.
+            </div>
+        </div>
+  </div>
+   <div class="emotion">
+           <label>Emotion</label>
+        <input
+            type="text"
+            id="emotion"
+            formControlName="emotion"
+            placeholder="Enter how you feel"
+            aria-required="true"
+            required
+            />
+           <div class="alert" *ngIf="confessionsForm.get('emotion')?.invalid && (confessionsForm.get('emotion')?.dirty || confessionsForm.get('emotion')?.touched)">
+            <div *ngIf="confessionsForm.get('emotion')?.hasError('required')">
+              Emotion is required.
+            </div>
+            <div *ngIf="confessionsForm.get('message')?.hasError('minlength')">
+              Message must be at least 4 characters long.
+            </div>
+        </div>
+   </div>
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="confessionsForm.invalid">Submit</button>
+</form>

@@ -11,8 +11,13 @@ export class PlaylistService {
   private url = `https://api.rantsnconfess.com/v1/playlists`
   constructor(private http: HttpClient, private errorService: ErrorService) { }
 
-  getPlaylist(page: number): Observable<IPlaylistListApiResponse> {
-    return this.http.get<IPlaylistListApiResponse>(`${this.url}?page=${page}`).pipe(
+  getPlaylist(page: number=0): Observable<IPlaylistListApiResponse> {
+    return page==0? this.http.get<IPlaylistListApiResponse>(`${this.url}`).pipe(
+      catchError(error => {
+        this.errorService.handleError(error);
+        return of(error)
+      })
+    ):this.http.get<IPlaylistListApiResponse>(`${this.url}?page=${page}`).pipe(
       catchError(error => {
         this.errorService.handleError(error);
         return of(error)
