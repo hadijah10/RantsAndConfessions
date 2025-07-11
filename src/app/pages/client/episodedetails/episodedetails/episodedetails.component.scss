@@ -34,4 +34,7 @@
     margin-top: 1rem;
     @include flex($justify:center,$align:baseline,$gap:2rem);
  }
+ p{
+    max-width: 30rem;
+ }
 }

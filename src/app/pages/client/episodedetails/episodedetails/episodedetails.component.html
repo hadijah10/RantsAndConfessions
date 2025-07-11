@@ -3,6 +3,7 @@
         <img [src]="episodedata.img_url" alt="Podcast Cover Image">
     </div>
       <h2>{{episodedata.title}}</h2>
+      <p>{{episodedata.description}}</p>
     <audio controls  loop preload="auto">
         <source [src]="episodedata.audio_url" type="audio/mpeg">
         Your browser does not support the audio element.
