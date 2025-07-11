@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {MatPaginatorIntl, MatPaginatorModule, PageEvent} from '@angular/material/paginator';
 import { EpisodesService } from '../../../services/api-consumer/episodes/episodes.service';
 import { PodcastEpisode } from '../../../model/episodedata.interface';
 import { PaginatorIntlService } from '../../../services/paginatorIntl/paginator-intl.service';
+import { RouterLink } from '@angular/router';
+import { EpisodecardComponent } from '../../../components/episodecard/episodecard.component';
 
 @Component({
   selector: 'app-episodes',
-  imports: [MatPaginatorModule],
+  imports: [MatPaginatorModule,RouterLink,EpisodecardComponent],
   templateUrl: './episodes.component.html',
   styleUrl: './episodes.component.scss',
   providers: [{provide: MatPaginatorIntl,useClass:PaginatorIntlService}]
@@ -15,6 +17,8 @@ export class EpisodesComponent {
 
    allEpisodes: PodcastEpisode[] = [];
   paginatedEpisodes: PodcastEpisode[] = [];
+  error = signal<string |null>(null)
+  isLoading=true
 
    totalItems = 0;
   pageSize = 5;
@@ -24,10 +28,18 @@ export class EpisodesComponent {
   }
 
   fetchEpisodes(){
-    this.episodeservice.getEpisodes().subscribe(data => {
-      this.allEpisodes = data.data;
-      this.totalItems = data.data.length;
-      this.updatePaginatedEpisodes();
+    this.episodeservice.getEpisodes().subscribe({
+      next:(data) => {
+        this.isLoading = false
+        this.error.set(null)
+        this.allEpisodes = data.data;
+        this.totalItems = data.data.length;
+        this.updatePaginatedEpisodes();
+      },
+      error:(error) => {
+        this.isLoading = false
+        this.error.set('An error ocurred')
+      }
     });
   }
 

@@ -1,17 +1,25 @@
-<!-- <mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Select page">
-</mat-paginator> -->
-@for(episode of paginatedEpisodes;track $index){
-<p>{{episode.title}}</p>
-}
-
-
+<section class="episodecontainer">
+    <section class="cardcontainer">
+       @if(isLoading){
+        <p>Loading ... </p>
+       }
+       @else {
+        @if(error()){
+            <p>An error occurred. Retry</p>
+        }
+        @else {
+                 @for(episode of paginatedEpisodes;track $index){
+                <a [routerLink] ='["/episodes",episode.id]'>
+                    <app-episodecard [epidata]="episode"></app-episodecard>
+                </a>
+        }
+        }
+       }
+    </section>
 <mat-paginator
   [length]="totalItems"
   [pageSize]="pageSize"
   aria-label="Select page"
-  (page)="onPageChange($event)">
-  
+  (page)="onPageChange($event)"> 
 </mat-paginator>
+</section>
