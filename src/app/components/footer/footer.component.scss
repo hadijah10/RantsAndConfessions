@@ -1,0 +1,52 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+svg{
+    width:1rem;
+    height: 1rem;
+}
+.topfoot{
+    @include flex($justify:space-between,$align:start);
+    padding-inline: 3rem;
+    padding-block: 1rem;
+    .info{
+        @include flex($direction:column,$justify:start,$align:start,$gap:1rem);
+        .details{
+            @include flex($direction:column,$justify:start,$gap:0.3rem)
+        }
+    }
+    @media(max-width:768px){
+        @include flex($direction:column,$gap:2rem);
+    }
+}
+h4,.name{
+    color: var(--active-link-bg);
+    font-size: 1rem;
+}
+.lcont{
+    width:2rem;
+    height: 2rem;
+    border: 1px solid var(--background-color);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    &:hover{
+        background-color: $accent;
+    }
+}
+.socials{
+    @include flex($direction:column,$gap:0.5rem);
+    .links{
+        @include flex($gap:0.3rem);
+    }
+}
+footer{
+      background-color: var(--header-color);
+       padding-block-start: 1.5rem;
+      padding-block-end: 1rem;
+    p{
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--background-color);
+    }
+    }
