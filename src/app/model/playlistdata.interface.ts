@@ -94,7 +94,7 @@ export interface IEpisode {
 
 export interface IEpisodeResponse {
   status: string,
-  data: IEpisode,
+  data: IEpisode[],
   meta: {
     total: number,
     page: number,

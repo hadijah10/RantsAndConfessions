@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IPodcastApiResponse,IPodcastEpisodesSearchApiResponse } from '../../../model/episodedata.interface';
+import { catchError, Observable, of } from 'rxjs';
+import { ErrorService } from '../../error.service';
+import { IEpisodeResponse } from '../../../model/playlistdata.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +11,15 @@ import { IPodcastApiResponse,IPodcastEpisodesSearchApiResponse } from '../../../
 export class EpisodesService {
   private url=`https://api.rantsnconfess.com/v1/episodes`
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private errorService:ErrorService) { }
 
-  getEpisodes(){
-    return this.http.get<IPodcastApiResponse>(this.url).pipe()
+  getEpisodes(page:number):Observable<IEpisodeResponse>{
+    return this.http.get<IEpisodeResponse>(`${this.url}?page=${page}`).pipe(
+      catchError(error=> {
+        this.errorService.handleError(error);
+        return of(error);
+      })
+    )
   }
 
   getSingleEpisode(){

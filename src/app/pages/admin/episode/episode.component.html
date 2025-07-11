@@ -20,23 +20,23 @@
             </div>
         </div>
 
-        <h1>Episodes (0)</h1>
+        <h1>Episodes ({{episodes.length}})</h1>
 
         <table class="playlist-table">
             <tbody>
-                <!-- @for (playlistItem of playlist?.data; track playlistItem.id) {
+                @for (episode of episodes; track episode.id) {
                 <tr class="row">
                     <td class="cover">
                         <img
-                            src="https://www.glyric.com/modules/custom/glyrics_custom/images/player_default_cover.png" />
+                            src="{{episode.img_url}}" />
                     </td>
                     <td class="title">
-                        <h3>{{playlistItem.name}}</h3>
-                        <p>{{playlistItem.description}}</p>
+                        <h3>{{episode.title}}</h3>
+                        <p>{{episode.description}}</p>
                     </td>
-                    <td class="created">{{playlistItem.created_at | date}}</td>
+                    <td class="created">{{episode.created_at | date}}</td>
                     <td class="actions">
-                        <button class="trash" (click)="onDelete(playlistItem)">
+                        <button class="trash" (click)="onDelete(episode)">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                 class="size-5">
                                 <path fill-rule="evenodd"
@@ -57,7 +57,7 @@
                         </button>
                     </td>
                 </tr>
-                } -->
+                }
             </tbody>
         </table>
 

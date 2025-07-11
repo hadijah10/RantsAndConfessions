@@ -1,1 +1,65 @@
-<p>confessions works!</p>
+<div class="conatiner">
+
+    <div class="confession-wrapper">
+        <div class="header">
+            <button (click)="toggleCreate()" class="add-playlist-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M3 18v-2h6v2H3Zm0-5v-2h12v2H3Zm0-5V6h18v2H3Z" />
+                </svg>
+                Sort
+            </button>
+            <div class="search-container">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+
+                <input type="text" placeholder="Search title ..." />
+            </div>
+        </div>
+
+        <h1>Confessions ({{data?.data?.length || 0}})</h1>
+
+        <div class="filter">
+            <button>Pending</button>
+            <button>Approved</button>
+            <button>All</button>
+        </div>
+
+
+        <div class="confession-list">
+            @for (confession of data?.data; track confession.id) {
+            <div class="confession-card">
+                <div class="meta">
+                    <p>{{confession.category}}</p>
+                    <p>{{confession.emotion}}</p>
+                </div>
+                <p>{{confession.message}}</p>
+                <p>{{confession.created_at | date}}</p>
+                @if (!confession.is_approved) {
+
+                <div class="actions">
+                    <button class="approve">
+                        Approve
+                    </button>
+                    <button class="delete">
+                        Delete
+                    </button>
+                </div>
+                }
+            </div>
+            }
+
+        </div>
+
+    </div>
+
+    <!-- @if (isDelete) {
+    <app-delete-modal (onClose)="onCancel()" [playlist]="selectedPlaylist" />
+    }
+
+    @if (isCreate) {
+        <app-create-playlist-modal (onClose)="toggleCreate()" />
+    } -->
+</div>
