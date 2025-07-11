@@ -37,8 +37,10 @@ export class ConfessionpageComponent {
           else{
                this.snackbarservice.success('Submitted Successfully')
           }
+         
         },
         error: (error) => {
+       
         }
       })
       this.confessionsForm.reset()
