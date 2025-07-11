@@ -1,1 +1,18 @@
-<p>episodes works!</p>
+<!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+</mat-paginator> -->
+@for(episode of paginatedEpisodes;track $index){
+<p>{{episode.title}}</p>
+}
+
+
+<mat-paginator
+  [length]="totalItems"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 20]"
+  aria-label="Select page"
+  (page)="onPageChange($event)">
+  
+</mat-paginator>
