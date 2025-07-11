@@ -110,6 +110,9 @@ h3{
 .cardcont{
     @include flex($direction:column,$justify:center,$align:center,$gap:0.3rem);
     margin-top:-2rem;
+    .playlistlink{
+        margin-top: 1rem;
+    }
     .card{
         cursor: pointer;
         z-index:0.8;

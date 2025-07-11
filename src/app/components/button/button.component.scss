@@ -8,12 +8,12 @@ button{
     border-radius: 3px;
     outline: none;
     border: none;
-    color: var(--active-link-bg);
     cursor: pointer;
     &:hover{
         scale: 1.1;
     }
     a{
     text-decoration: none;
+    color: var(--active-link-bg);
 }
 }

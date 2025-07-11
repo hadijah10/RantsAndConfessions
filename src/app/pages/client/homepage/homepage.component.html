@@ -33,7 +33,7 @@
         @if(featplaylist$ | async; as playlist){
             @for (data of playlist.data.data;track $index){
             @if($index <= 2){
-                <a routerLink="/playlists">
+                <a [routerLink]='["/playlists",data.id]'>
                 <section class="card">
                      <div class="image">
                     <img src="/assets/micv.jpg" alt="">
@@ -59,6 +59,9 @@
             }
             }
         }
+        <div class="playlistlink">
+            <app-button text="See More" link="/playlists"></app-button>
+        </div>
     </section>
     <section class="episodescontainer">
         <div class="texthead">
@@ -69,7 +72,7 @@
            @if(episodesdata$ | async;as epidata){
                 @for(epidata of epidata.data;track $index){
                     @if($index <6){
-                        <a [routerLink] ='["/app",epidata.id]'>
+                        <a [routerLink] ='["/episodes",epidata.id]'>
                             <app-episodecard [epidata]="epidata"></app-episodecard>
                         </a>
                     }
