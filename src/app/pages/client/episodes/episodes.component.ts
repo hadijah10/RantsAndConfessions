@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import {MatPaginatorModule, PageEvent} from '@angular/material/paginator';
+import {MatPaginatorIntl, MatPaginatorModule, PageEvent} from '@angular/material/paginator';
 import { EpisodesService } from '../../../services/api-consumer/episodes/episodes.service';
 import { PodcastEpisode } from '../../../model/episodedata.interface';
+import { PaginatorIntlService } from '../../../services/paginatorIntl/paginator-intl.service';
 
 @Component({
   selector: 'app-episodes',
   imports: [MatPaginatorModule],
   templateUrl: './episodes.component.html',
-  styleUrl: './episodes.component.scss'
+  styleUrl: './episodes.component.scss',
+  providers: [{provide: MatPaginatorIntl,useClass:PaginatorIntlService}]
 })
 export class EpisodesComponent {
 
