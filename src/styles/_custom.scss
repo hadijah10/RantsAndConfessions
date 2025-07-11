@@ -6,6 +6,9 @@
     --text-color: #{$light-text-color};
     --search-color: #{$light-search-color};
     --body-text-color: #17141D;
+    --card-bg-color:#ffffff;
+    --active-link-bg:#{$light-link-active};
+    --button-bg-color: #17141D;
 }
 .dark-theme{
     --background-color: #{$dark-bg};
@@ -13,6 +16,8 @@
     --text-color: #{$dark-text-color};
     --search-color: #{$dark-search-color};
     --body-text-color: #F6F6F6;
-
+    --card-bg-color: #6e677b;
+     --active-link-bg:#{$dark-link-active};
+      --button-bg-color: #F6F6F6;
 }
 
