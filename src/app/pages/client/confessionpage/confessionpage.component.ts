@@ -29,14 +29,18 @@ export class ConfessionpageComponent {
 
   onSubmit(){
     if(this.confessionsForm.valid){
-      console.log(this.confessionsForm.value)
       this.confessionsService.postConfessions(this.confessionsForm.value).subscribe({
         next: (value) =>{
-          this.snackbarservice.success('Submitted Successfully')
+          if(value.error){
+               this.snackbarservice.error('Submission Failed')
+          }
+          else{
+               this.snackbarservice.success('Submitted Successfully')
+          }
+         
         },
         error: (error) => {
-          //
-          this.snackbarservice.error('Submission Failed')
+       
         }
       })
       this.confessionsForm.reset()
