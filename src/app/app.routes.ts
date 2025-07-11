@@ -8,6 +8,7 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { PlaylistComponent } from './pages/admin/playlist/playlist.component';
 import { EpisodeComponent } from './pages/admin/episode/episode.component';
 import { ConfessionsComponent } from './pages/admin/confessions/confessions.component';
+import { ConfessionpageComponent } from './pages/client/confessionpage/confessionpage.component';
 
 export const routes: Routes = [
     {
@@ -41,6 +42,10 @@ export const routes: Routes = [
             {
                 path: "",
                 component: HomepageComponent,
+            },
+            {
+                path:'confessions',
+                component:ConfessionpageComponent
             }
         ]
     },
