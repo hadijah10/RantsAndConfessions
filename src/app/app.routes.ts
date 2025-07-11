@@ -10,6 +10,7 @@ import { EpisodeComponent } from './pages/admin/episode/episode.component';
 import { ConfessionsComponent } from './pages/admin/confessions/confessions.component';
 import { ConfessionpageComponent } from './pages/client/confessionpage/confessionpage.component';
 import { EpisodesComponent } from './pages/client/episodes/episodes.component';
+import { EpisodedetailsComponent } from './pages/client/episodedetails/episodedetails/episodedetails.component';
 
 export const routes: Routes = [
     {
@@ -50,7 +51,11 @@ export const routes: Routes = [
             },
             {
                 path:'episodes',
-                component: EpisodesComponent
+                component: EpisodesComponent,
+            },
+            {
+                path:'episodes/:id',
+                component: EpisodedetailsComponent
             }
         ]
     },
