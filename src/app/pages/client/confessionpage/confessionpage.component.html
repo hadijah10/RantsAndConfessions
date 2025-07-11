@@ -1,5 +1,5 @@
 <form [formGroup]="confessionsForm" (ngSubmit)="onSubmit()" aria-labelledby="formTitle">
-  <h2 id="formTitle">Submit Your Feedback</h2>
+  <h2 id="formTitle">Confession</h2>
   <div>
     <label for="message">Message</label>
     <textarea
@@ -32,11 +32,8 @@
             </div>
         </div>
   </div>
-
-      <ng-container *ngFor="let cat of categories; let i = index">
-        <option [value]="cat">{{ cat }}</option>
-      </ng-container>
-      <legend>Emotion</legend>
+   <div class="emotion">
+           <label>Emotion</label>
         <input
             type="text"
             id="emotion"
@@ -45,8 +42,15 @@
             aria-required="true"
             required
             />
-
-
+           <div class="alert" *ngIf="confessionsForm.get('emotion')?.invalid && (confessionsForm.get('emotion')?.dirty || confessionsForm.get('emotion')?.touched)">
+            <div *ngIf="confessionsForm.get('emotion')?.hasError('required')">
+              Emotion is required.
+            </div>
+            <div *ngIf="confessionsForm.get('message')?.hasError('minlength')">
+              Message must be at least 4 characters long.
+            </div>
+        </div>
+   </div>
   <!-- Submit Button -->
   <button type="submit" [disabled]="confessionsForm.invalid">Submit</button>
 </form>
