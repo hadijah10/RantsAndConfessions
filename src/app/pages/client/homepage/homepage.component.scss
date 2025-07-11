@@ -2,6 +2,9 @@
 @use 'fonts' as *;
 @use 'variables' as *;
 
+a{
+    text-decoration: none;
+}
 h3{
         font-size: 2rem;
         color:var(--body-text-color);
@@ -27,7 +30,6 @@ h3{
             background-color: black;
             margin-top: 1rem;
             @include TextSB;
-            color: white;
             font-size: 1rem;
             outline: none;
             border: none;
@@ -41,6 +43,10 @@ h3{
             padding-block: 0.2rem;
                 font-size: 0.5rem;
             }
+        }
+        a{
+            text-decoration: none;
+             color: white;
         }
     }
     .headtext{
@@ -104,6 +110,9 @@ h3{
 .cardcont{
     @include flex($direction:column,$justify:center,$align:center,$gap:0.3rem);
     margin-top:-2rem;
+    .playlistlink{
+        margin-top: 1rem;
+    }
     .card{
         cursor: pointer;
         z-index:0.8;
@@ -156,6 +165,23 @@ h3{
         }
     }
 }
-.episodecontainer{
-    @include flex($direction:column,$justify:center,$align:center,$gap:0.5rem)
+.episodescontainer{
+    @include flex($direction:column,$justify:center,$align:center,$gap:2.5rem);
+    padding-block: 2.5rem;
+    .homeepisodetitle{
+        font-size: 1.2rem;
+    }
+    .texthead{
+        @include flex($direction:column,$gap:1.2rem)
+    }
+}
+.episodecards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center align */
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  }
 }

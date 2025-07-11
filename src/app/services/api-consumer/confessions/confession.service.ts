@@ -13,7 +13,7 @@ export class ConfessionService {
   constructor(private http: HttpClient, private errorService: ErrorService) { }
   
   getConfessions(status: Ifilter = ""):Observable<IConfessionResponse> {
-    return this.http.get<IConfessionResponse>(status? `${this.url}?status=${status}&page=2`: this.url).pipe(
+    return this.http.get<IConfessionResponse>(status? `${this.url}?status=${status}`: this.url).pipe(
       catchError(error => {
         this.errorService.handleError(error)
         return of(error)

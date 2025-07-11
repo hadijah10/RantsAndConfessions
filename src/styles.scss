@@ -4,6 +4,7 @@
 @use 'reset' as *;
 @use 'custom' as *;
 @use 'fonts' as *;
+@use 'mat-snackbar' as *;
 
 *{
     margin: 0;
@@ -22,3 +23,4 @@ body{
 button, a {
     cursor: pointer;
 }
+

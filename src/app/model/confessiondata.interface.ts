@@ -25,6 +25,7 @@ export interface IPostConfessionData {
 
 export interface IPostConfessionDataResponse {
   message: string,
+  error?: string,
   confession: {
     id: number,
     message: string,

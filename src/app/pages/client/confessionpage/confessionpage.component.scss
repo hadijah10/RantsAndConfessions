@@ -1,0 +1,107 @@
+/* Form Container */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--header-color);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-family: system-ui, sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+/* Heading */
+form h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--active-link-bg);
+}
+
+/* Form Groups */
+div {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--card-bg-color);
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  border-color: #17141D;
+  outline: none;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: var(--search-color);;
+  color: var(--body-text-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover:enabled {
+  background-color: var(--text-color);
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Error Alert Styling */
+.alert {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #b30000;
+  background-color: #ffe6e6;
+  padding: 0.3rem 0.2rem;
+  border-left: 4px solid #b30000;
+  border-radius: 4px;
+}
+
+/* Legend Styling */
+legend {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  form {
+    padding: 1rem;
+  }
+
+  textarea,
+  input,
+  select,
+  button {
+    font-size: 0.95rem;
+  }
+}
