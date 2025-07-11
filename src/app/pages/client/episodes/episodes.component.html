@@ -1,0 +1,25 @@
+<section class="episodecontainer">
+    <section class="cardcontainer">
+       @if(isLoading){
+        <p>Loading ... </p>
+       }
+       @else {
+        @if(error()){
+            <p>An error occurred. Retry</p>
+        }
+        @else {
+                 @for(episode of paginatedEpisodes;track $index){
+                <a [routerLink] ='["/app/episodes",episode.id]'>
+                    <app-episodecard [epidata]="episode"></app-episodecard>
+                </a>
+        }
+        }
+       }
+    </section>
+<mat-paginator
+  [length]="totalItems"
+  [pageSize]="pageSize"
+  aria-label="Select page"
+  (page)="onPageChange($event)"> 
+</mat-paginator>
+</section>
