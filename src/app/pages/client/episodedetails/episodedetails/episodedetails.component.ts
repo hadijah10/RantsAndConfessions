@@ -19,7 +19,7 @@ export class EpisodedetailsComponent {
 
   constructor(private episodeService:EpisodesService){
     this.id = this.activeroute.snapshot.params['id']
-    this.episodeService.getEpisodes().subscribe({
+    this.episodeService.getEpisodes(1).subscribe({
       next:(data) => {
         this.episodedata = data.data.find(episode => episode.id == parseInt(this.id))!
       },

@@ -11,6 +11,7 @@ import { ConfessionsComponent } from './pages/admin/confessions/confessions.comp
 import { ConfessionpageComponent } from './pages/client/confessionpage/confessionpage.component';
 import { EpisodesComponent } from './pages/client/episodes/episodes.component';
 import { EpisodedetailsComponent } from './pages/client/episodedetails/episodedetails/episodedetails.component';
+import { PublicOnlyAuthGuard } from './guards/public-only.guard';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {
         path: "auth",
         component: AuthLayoutComponent,
+        canActivate:[PublicOnlyAuthGuard],
         children: [
             {
                 path: "",

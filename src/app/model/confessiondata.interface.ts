@@ -3,7 +3,7 @@ export interface IGetConfessionData {
   message: string,
   category: string,
   emotion: string,
-  is_approved: boolean,
+  is_approved: string,
   created_at: string,
   updated_at: string
 }
@@ -25,6 +25,7 @@ export interface IPostConfessionData {
 
 export interface IPostConfessionDataResponse {
   message: string,
+  error?: string,
   confession: {
     id: number,
     message: string,

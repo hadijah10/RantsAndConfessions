@@ -63,50 +63,68 @@ export class PlaylistStateService {
     });
   }
 
-createPlaylist(name: string, description: string): Observable<boolean> {
-  return this.playlistClient.createPlaylist({ name, description }).pipe(
-    map(value => {
-      if (value.status === 'success') {
-        const currentValue = this.playlistSubject.value;
+  createPlaylist(name: string, description: string): Observable<boolean> {
+    return this.playlistClient.createPlaylist({ name, description }).pipe(
+      map(value => {
+        if (value.status === 'success') {
+          const currentValue = this.playlistSubject.value;
 
-        this.playlistSubject.next({
-          ...currentValue,
-          data: [value.data, ...(currentValue?.data || [])],
-          current_page: currentValue?.current_page ?? 1,
-          first_page_url: currentValue?.first_page_url ?? '',
-          from: currentValue?.from ?? 0,
-          last_page: currentValue?.last_page ?? 1,
-          last_page_url: currentValue?.last_page_url ?? '',
-          next_page_url: currentValue?.next_page_url ?? null,
-          path: currentValue?.path ?? '',
-          per_page: currentValue?.per_page ?? 0,
-          prev_page_url: currentValue?.prev_page_url ?? null,
-          to: currentValue?.to ?? 0,
-          total: currentValue?.total ?? 0,
-          links: currentValue?.links ?? []
-        });
+          this.playlistSubject.next({
+            ...currentValue,
+            data: [value.data, ...(currentValue?.data || [])],
+            current_page: currentValue?.current_page ?? 1,
+            first_page_url: currentValue?.first_page_url ?? '',
+            from: currentValue?.from ?? 0,
+            last_page: currentValue?.last_page ?? 1,
+            last_page_url: currentValue?.last_page_url ?? '',
+            next_page_url: currentValue?.next_page_url ?? null,
+            path: currentValue?.path ?? '',
+            per_page: currentValue?.per_page ?? 0,
+            prev_page_url: currentValue?.prev_page_url ?? null,
+            to: currentValue?.to ?? 0,
+            total: currentValue?.total ?? 0,
+            links: currentValue?.links ?? []
+          });
 
-        return true;
-      } else {
-        return false;
-      }
-    }),
-    catchError(error => {
-      console.error('Create playlist failed:', error);
-      return of(false);
-    })
-  );
-}
-
-
-  search(query: string) {
-    // this.playlistClient.
+          return true;
+        } else {
+          return false;
+        }
+      }),
+      catchError(error => {
+        console.error('Create playlist failed:', error);
+        return of(false);
+      })
+    );
   }
 
 
+  search(query: string): void {
+    // this.playlistClient.searchPlaylists(query).pipe(
+    //   tap(value => {
+    //     if (value?.data) {
+    //       this.playlistSubject.next(value.data);
+    //     }
+    //   }),
+    //   catchError(err => {
+    //     console.error('Search failed:', err);
+    //     return of(null);
+    //   })
+    // ).subscribe();
+  }
+
   nextPage(): void {
-    this.page++;
-    this.getPlaylist();
+    if (this.page < this.lastPage) {
+      this.page++;
+      this.getPlaylist();
+    }
+  }
+
+  prevPage(): void {
+    if (this.page > 1) {
+      this.page--;
+      this.getPlaylist();
+    }
   }
 
 }

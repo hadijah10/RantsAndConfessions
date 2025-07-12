@@ -21,7 +21,7 @@ export class HomepageComponent {
 
   constructor(private playlist:PlaylistService,private episodes:EpisodesService){
     this.featplaylist$ = this.playlist.getPlaylist()
-    this.episodesdata$ =  this.episodes.getEpisodes()
+    this.episodesdata$ =  this.episodes.getEpisodes(1)
   }
 
 

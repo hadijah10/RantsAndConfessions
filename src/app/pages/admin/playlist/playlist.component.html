@@ -61,6 +61,14 @@
             </tbody>
         </table>
 
+
+<app-pagination
+  (next)="next()"
+  (prev)="prev()"
+  [page]="playlist?.current_page || 1"
+  [totalPage]="totalPage"
+/>
+
     </div>
 
     @if (isDelete) {

@@ -22,10 +22,17 @@
         <h1>Confessions ({{data?.data?.length || 0}})</h1>
 
         <div class="filter">
-            <button>Pending</button>
-            <button>Approved</button>
-            <button>All</button>
+            <button [ngClass]="{ 'active': selectedFilter === 'pending' }" (click)="setFilter('pending')">
+                Pending
+            </button>
+            <button [ngClass]="{ 'active': selectedFilter === 'approved' }" (click)="setFilter('approved')">
+                Approved
+            </button>
+            <button [ngClass]="{ 'active': selectedFilter === '' }" (click)="setFilter('')">
+                All
+            </button>
         </div>
+
 
 
         <div class="confession-list">
@@ -37,7 +44,8 @@
                 </div>
                 <p>{{confession.message}}</p>
                 <p>{{confession.created_at | date}}</p>
-                @if (!confession.is_approved) {
+                <div class="spacer"></div>
+                @if (confession.is_approved !== "1") {
 
                 <div class="actions">
                     <button class="approve">

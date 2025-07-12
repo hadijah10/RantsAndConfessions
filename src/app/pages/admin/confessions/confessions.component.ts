@@ -38,6 +38,7 @@ throw new Error('Method not implemented.');
 
   setFilter(filter: Ifilter) {
     this.selectedFilter = filter;
+    this.confessionState.getConfessions(this.selectedFilter)
   }
 
   ngOnDestroy(): void {

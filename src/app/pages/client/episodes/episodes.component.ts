@@ -28,7 +28,7 @@ export class EpisodesComponent {
   }
 
   fetchEpisodes(){
-    this.episodeservice.getEpisodes().subscribe({
+    this.episodeservice.getEpisodes(1).subscribe({
       next:(data) => {
         this.isLoading = false
         this.error.set(null)
