@@ -60,9 +60,9 @@
                 }
             </tbody>
         </table>
-
+        
+        <app-pagination (next)="next()" (prev)="prev()" [page]="page" [totalPage]="totalPage" />
     </div>
-
     <!-- @if (isDelete) {
     <app-delete-modal (onClose)="onCancel()" [playlist]="selectedPlaylist" />
     }
