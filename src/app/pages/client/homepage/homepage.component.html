@@ -104,7 +104,7 @@
       <nav class="socials" aria-label="Social media links for team member">
       @for(membersocial of member.social_media_links;track $index){
           <a
-          [routerLink]="membersocial.url"
+          [href]="membersocial.url"
           aria-label="Instagram profile of member"
         >
           @if(membersocial.platform.toLowerCase() == 'instagram'){
