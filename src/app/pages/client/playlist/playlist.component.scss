@@ -1,0 +1,108 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+@use 'fonts' as *;
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:hover{
+    text-decoration: none !important;
+}
+.head{
+    @include flex($justify:space-between,$align:center);
+    padding-inline: 5rem;
+    padding-block: 2rem;
+    background-color: #A5C7D4;
+    @media (max-width:768px) {
+        padding-inline: 10px;
+        @include flex($direction:column,$gap:1rem);
+    }
+    .hright{
+        @include flex($direction:column,$justify:space-between,$gap:2rem);
+        flex: 0.5;
+        h2{
+            font-size: 4rem;
+            @include TextXB;
+            @media(max-width:768px){
+                font-size: 2rem;
+            }
+            @media(max-width:468px){
+                font-size: 1rem;
+            }
+        }
+        .play{
+            background-color: white;
+            height: 4rem;
+            width: 4rem;
+            svg{
+                width:2rem;
+                height: 2rem;
+                fill: red;
+            }
+        }
+    }
+    .imgcontainer{
+        flex: 0.5;
+        @include flex($justify:center);
+        img{
+            width: 70%;
+            height: 70%;
+        }
+    }
+}
+.subdetail{
+    flex: 1;
+    padding: 0.3rem;
+    @include flex($justify:space-between,$align:center);
+    .playdetails{
+        @include flex($direction:column,$gap:1rem);
+    }
+    @media(max-width:768px){
+        @include flex($direction:column,$gap:1rem);
+    }
+}
+.wholecards{
+    padding-block: 2rem;
+    @include flex($direction:column,$justify:center,$gap:1rem);
+
+}
+.playlistcard{
+    width:65rem;
+    padding: 0.4rem;
+    cursor: pointer;
+    @include flex($justify:start,$align:center,$gap:1rem);
+    background-color: var(--card-bg-color);
+    box-shadow: 0px 0px 2px 3px $shardow-color;
+    margin: auto;
+    @media(max-width:768px){
+        width:80%;
+        @include flex($direction:column,$gap:1rem)
+    }
+    @media(max-width:468px){
+        width:min(90%,20rem);
+    }
+    .playimg{
+        width:8rem;
+        height: 6rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        img{ 
+            width:100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+}
+.end{
+    @include flex($justify:center,$align:center,$gap:1rem);
+    .fav,.more{
+        width:2rem;
+        height: 2rem;
+        cursor: pointer;
+    }
+    svg{
+        width: inherit;
+        height: inherit;
+    }
+}

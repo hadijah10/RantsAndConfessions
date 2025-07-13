@@ -36,7 +36,7 @@ export const routes: Routes = [
             {
                 path: "signup",
                 loadComponent: () => import('./pages/auth/signuppage/signuppage.component').then(c => c.SignuppageComponent)
-            },
+            }
         ]
     },
     {
@@ -49,15 +49,19 @@ export const routes: Routes = [
             },
             {
                 path:'confessions',
-                component:ConfessionpageComponent
+                loadComponent:() => import('./pages/client/confessionpage/confessionpage.component').then(m => m.ConfessionpageComponent)
             },
             {
                 path:'episodes',
-                component: EpisodesComponent,
+                loadComponent: () => import('./pages/client/episodes/episodes.component').then(m => m.EpisodesComponent)
             },
             {
                 path:'episodes/:id',
-                component: EpisodedetailsComponent
+                loadComponent:() => import('./pages/client/episodedetails/episodedetails/episodedetails.component').then(m => m.EpisodedetailsComponent)
+            },
+            {
+                path: 'playlists',
+                loadComponent: () => import('./pages/client/playlist/playlist.component').then(m => m.PlaylistComponent)
             }
         ]
     },
