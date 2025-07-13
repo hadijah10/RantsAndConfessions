@@ -1,10 +1,11 @@
 import { Component,signal } from '@angular/core';
 import { PlaylistService } from '../../../services/api-consumer/playlist/playlist.service';
 import { IPlaylistResponseData } from '../../../model/playlistdata.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-playlist',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './playlist.component.html',
   styleUrl: './playlist.component.scss'
 })
