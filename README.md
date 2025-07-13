@@ -1,59 +1,31 @@
-# PodcastApp
+# Project Overview
+An application where you can manage your podcast playlist as well as liten to episodes.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
+## API intergration Instructions
+- A swagger was used to provide access to the api data for the application.
+- Services for making seperate api request were created per the kind of data being accessed.
+  
+## Set Up
+-Ensure you have node together with angular CLI installed.
+- First clone the project with git clone https://github.com/hadijah10/RantsAndConfessions.git.
+- Run npm install to install all depencies.
+- Run ng serve to spin uo the local development serve to have a live preview of the applications.
 
-## Development server
+## Features
+- A podcast application that displays a features playlist and episodes.
+- The public is able to send out anonymous confessions to the the admin of the podcast.
+- The admin gains access to priviledges roles via authentication.
+- Admin is able t manage team members of the pocast.
+- Admin is able to view all confessions.
+- Admin has access to creating a playlist, updating and deleting it.
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+## Demo Link
+[Visit the live site](https://rants-and-confessions-git-main-hadijas-projects.vercel.app/app)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Tech Stack
+- Angular
+- Angular Material
+- Scss
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
