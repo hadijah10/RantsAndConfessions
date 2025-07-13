@@ -53,7 +53,7 @@ export const routes: Routes = [
             },
             {
                 path:'episodes',
-                loadComponent: () => import ('./pages/client/playlist/playlist.component').then(m => m.PlaylistComponent)
+                loadComponent: () => import('./pages/client/episodes/episodes.component').then(m => m.EpisodesComponent)
             },
             {
                 path:'episodes/:id',
