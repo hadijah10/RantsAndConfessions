@@ -1,0 +1,10 @@
+button{
+    background-color: none;
+    border: none;
+    outline: none;
+    svg{
+        width:1rem;
+    height: 1rem;
+    fill: var(--active-link-bg);
+    }
+}
