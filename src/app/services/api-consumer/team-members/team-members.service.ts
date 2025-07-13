@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ICreateTeamMemberPayload, ITeamMember, ITeamMemberCreateApiResponse,ITeamMemberDeleteApiResponse,ITeamMembersApiResponse,ITeamMemberUpdateApiResponse } from '../../../model/teammembersdata.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class TeamMembersService {
   private url = `https://api.rantsnconfess.com/v1`
   constructor(private http: HttpClient) { }
 
-  getTeamMembers(){
+  getTeamMembers():Observable<ITeamMembersApiResponse>{
     return this.http.get<ITeamMembersApiResponse>(`${this.url}/team-members`).pipe()
   }
 

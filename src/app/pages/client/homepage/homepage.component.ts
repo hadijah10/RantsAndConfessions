@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { PlaylistService } from '../../../services/api-consumer/playlist/playlist.service';
 import { IPlaylistListApiResponse } from '../../../model/playlistdata.interface';
 import { Observable } from 'rxjs';
@@ -9,7 +9,7 @@ import { EpisodecardComponent } from '../../../components/episodecard/episodecar
 import { RouterLink } from '@angular/router';
 import { ButtonComponent } from '../../../components/button/button.component';
 import { TeamMembersService } from '../../../services/api-consumer/team-members/team-members.service';
-import { ITeamMember } from '../../../model/teammembersdata.interface';
+import { ITeamMember, ITeamMembersApiResponse } from '../../../model/teammembersdata.interface';
 
 @Component({
   selector: 'app-homepage',
@@ -17,7 +17,7 @@ import { ITeamMember } from '../../../model/teammembersdata.interface';
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit{
   featplaylist$!:Observable<IPlaylistListApiResponse>
   episodesdata$!:Observable<IPodcastApiResponse>
   teamMembers!:ITeamMember[]
@@ -27,17 +27,22 @@ export class HomepageComponent {
   constructor(private playlist:PlaylistService,private episodes:EpisodesService,private teammembersService: TeamMembersService){
     this.featplaylist$ = this.playlist.getPlaylist()
     this.episodesdata$ =  this.episodes.getEpisodes(1)
+    
+  }
+
+  ngOnInit(){
     this.teammembersService.getTeamMembers().subscribe({
-      next:(data) => {
+      next:(members) => {
         this.isLoading = false
-        this.teamMembers = data.data},
+        if(members){
+          this.teamMembers = members.data
+        }
+        },
       error:(error) => {
         this.isLoading = false
         this.isError.set('An error occurred')
       }
     })
   }
-
-
 
 }
