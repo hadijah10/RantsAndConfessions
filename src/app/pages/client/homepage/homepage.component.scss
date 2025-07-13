@@ -185,3 +185,73 @@ h3{
     cursor: pointer;
   }
 }
+.team-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 70rem;
+  justify-content: center;
+  margin: auto;
+}
+
+.team-card {
+//   border-radius: 16px;
+  padding: 1.5rem;
+//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+//   transition: transform 0.2s ease-in-out;
+  outline: none;
+  svg{
+    width:1.5rem;
+    height: 1.5rem;
+    fill: var(--body-text-color);
+  }
+}
+
+// .team-card:focus,
+// .team-card:hover {
+//   transform: translateY(-5px);
+//   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+// }
+
+.avatar {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  @media (max-width:992px) {
+      width: 12rem;
+  height: 12rem;
+  }
+   @media (max-width:786px) {
+      width: 9rem;
+  height: 9rem;
+  }
+  @media (max-width:486px) {
+      width: 6rem;
+  height: 6rem;
+  }
+}
+
+.role {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.socials a {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #165e83;
+}
