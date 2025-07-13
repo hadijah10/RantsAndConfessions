@@ -21,7 +21,7 @@ export interface IMeta {
   last_page: number;
 }
 
-export interface ITeamMembersApiResponse {
+export interface  ITeamMembersApiResponse {
   status: string; // e.g., "success"
   data: ITeamMember[];
   meta: IMeta;

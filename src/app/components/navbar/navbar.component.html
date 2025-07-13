@@ -34,6 +34,7 @@
     <li><a routerLink="/app/confessions" routerLinkActive="active" tabindex="0">Confessions</a></li>
   </ul>
 
+  <app-themeswitcher></app-themeswitcher>
   <button class="login">
     @if (authStateService.authState) {
       <a routerLink="/admin" routerLinkActive="active" tabindex="0">Account</a>
