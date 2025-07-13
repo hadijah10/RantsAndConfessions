@@ -10,7 +10,7 @@
                   strategy, I’ve helped bring stories to life and create a lasting impact through sound.
                 </p>
                 <button class="start">
-                    <a routerLink="/">Start Listening</a>
+                    <a routerLink="/app/episodes">Start Listening</a>
                 </button>
         </div>
             <div class="host">
@@ -60,7 +60,7 @@
             }
         }
         <div class="playlistlink">
-            <app-button text="See More" link="/playlists"></app-button>
+            <app-button text="See More" link="/app/playlists"></app-button>
         </div>
     </section>
     <section class="episodescontainer">
@@ -79,10 +79,17 @@
                 }
            }
         </section>
-        <app-button text="See More" link="/episodes"></app-button>
+        <app-button text="See More" link="/app/episodes"></app-button>
     </section>
 </section>
-<section class="team-section" aria-labelledby="teamTitle">
+@if(isLoading){
+    <p>Loading.../p>
+}@else {
+    @if(isError()){
+        <p>An error occured</p>
+    }
+    @else {
+        <section class="team-section" aria-labelledby="teamTitle">
   <h2 id="teamTitle">Meet the Team</h2>
   <div class="team-grid" role="list">
     @for(member of teamMembers;track $index){
@@ -126,5 +133,7 @@
     }
   </div>
 </section>
+    }
+}
 
 </section>
