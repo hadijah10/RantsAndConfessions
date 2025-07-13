@@ -82,4 +82,47 @@
         <app-button text="See More" link="/episodes"></app-button>
     </section>
 </section>
+<!-- <section class="team-section" aria-labelledby="teamTitle">
+  <h2 id="teamTitle">Meet the Team</h2>
+  <div class="team-grid" role="list">
+    <div
+      class="team-card"
+      *ngFor="let member of teamMembers"
+      role="listitem"
+      tabindex="0"
+      aria-label="Team member profile"
+    >
+      <img
+        [src]="member.avatarUrl"
+        [alt]="member.name + ', ' + member.role"
+        class="avatar"
+      />
+
+      <h3>{{ member.name }}</h3>
+      <p class="role">{{ member.role }}</p>
+
+      <nav class="socials" aria-label="Social media links for {{ member.name }}">
+        <a
+          [routerLink]="member.instagram"
+          aria-label="Instagram profile of {{ member.name }}"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          [routerLink]="member.linkedin"
+          aria-label="LinkedIn profile of {{ member.name }}"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a
+          [routerLink]="member.twitter"
+          aria-label="Twitter profile of {{ member.name }}"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+      </nav>
+    </div>
+  </div>
+</section> -->
+
 </section>

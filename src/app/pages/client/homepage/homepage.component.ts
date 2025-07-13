@@ -18,6 +18,7 @@ import { ButtonComponent } from '../../../components/button/button.component';
 export class HomepageComponent {
   featplaylist$!:Observable<IPlaylistListApiResponse>
   episodesdata$!:Observable<IPodcastApiResponse>
+  // teamMembers$!:
 
   constructor(private playlist:PlaylistService,private episodes:EpisodesService){
     this.featplaylist$ = this.playlist.getPlaylist()
